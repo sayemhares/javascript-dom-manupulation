@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    //5.Navigator Object:
+    //aaaaaaaaa//
+  //bbbbbbbbb//
+
+function detectBrowser() {
+  var userAgent = navigator.userAgent;
+  var browserName, browserVersion;
+
+ 
+  if (userAgent.indexOf("Opera") !== -1 || userAgent.indexOf("OPR") !== -1) {
+    browserName = "Opera";
+  } else {
+    browserName = "Unknown";
+  }
+
+ 
+  if (userAgent.indexOf("Version/") !== -1) {
+    browserVersion = userAgent.split("Version/")[1].split(" ")[0];
+  } else {
+    browserVersion = "Unknown";
+  }
+
+  return {
+    name: browserName,
+    version: browserVersion
+  };
+}
+
+
+var browserInfo = detectBrowser();
+console.log(browserInfo.name);
+console.log( browserInfo.version);
+
+    </script>
+    
+</body>
+</html>
